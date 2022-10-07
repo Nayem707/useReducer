@@ -24,10 +24,30 @@ First of all, We need create a Context Folder. 'context' -> UserContext.js
 ### step-2:
 
 import { createContext } from "react";
+
 export const userContext = createContext();
 
 ### step-3:
 
-Go to App.js componenet and then
+Go To 'App.js' componenet and then->
 
-import usrContext from './context/UserContext';
+import { UserContext } from "./context/userContext";
+
+<userContext.Provider value={[user]}>
+<Home user={user} />
+</userContext.Provider>
+
+Make sure before you must import children's components to the app components "Home.js".
+
+### step-4:
+
+import { userContext } from "../context/userContext";
+
+const Home = () => {
+
+const [user] = useContext(userContext);
+
+return (<p>{user}<p>);
+};
+
+export default Home;
