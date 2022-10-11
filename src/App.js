@@ -1,17 +1,21 @@
-import { useState } from "react";
 import "./App.css";
-import Home from "./components/Home";
-
-import { userContext } from "./context/userContext";
+import { AppProvider } from "./context/AppProvider";
+// import Home from "./pages/home";
+// import About from "./pages/about";
+// import DataFatch from "./Use-Reducer/DataFatch";
+// import UseReducer from "./Use-Reducer/UseReducer";
+import ComUseReducer from "./Use-Reducer/ComUseReducer";
 
 function App() {
-  const [user, setUser] = useState("Nayem Islam");
-  const [users, setUsers] = useState("is am are");
-
   return (
-    <userContext.Provider value={[user, users]}>
-      <Home user={user} users={users} />
-    </userContext.Provider>
+    <AppProvider>
+      <h1>Hello! Reducer or Context Sir I am confucing you, but why? </h1>
+      {/* <Home /> */}
+      {/* <About /> */}
+      {/* <DataFatch /> */}
+      {/* <UseReducer /> */}
+      <ComUseReducer />
+    </AppProvider>
   );
 }
 

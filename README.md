@@ -37,7 +37,7 @@ import { UserContext } from "./context/userContext";
 <Home user={user} />
 </userContext.Provider>
 
-Make sure before you must import children's components to the app components "Home.js".
+### Make sure before you must import children's components to the app components "Home.js".
 
 ### step-4:
 
