@@ -25,17 +25,17 @@ First of all, We need create a Context Folder. 'context' -> UserContext.js
 
 import { createContext } from "react";
 
-export const userContext = createContext();
+export const UserContext = createContext();
 
 ### step-3:
 
 Go To 'App.js' componenet and then->
 
-import { UserContext } from "./context/userContext";
+import { UserContext } from "./context/UserContext";
 
-<userContext.Provider value={[user]}>
+<UserContext.Provider value={[user]}>
 <Home user={user} />
-</userContext.Provider>
+</UserContext.Provider>
 
 ### Make sure before you must import children's components to the app components "Home.js".
 
