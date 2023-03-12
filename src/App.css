@@ -1,7 +1,6 @@
-.bg-dark {
-    background-color: black;
-}
-
-.bg-light {
-    background-color: rgb(165, 142, 142);
+body {
+    text-align: center;
+    padding-top: 10px;
+    background-color: cadetblue;
+    color: azure;
 }
