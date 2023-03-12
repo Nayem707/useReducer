@@ -1,37 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import { useAPI } from "../../context/ApiContext";
 
-const Home = () => {
-  const [text, setText] = useState("");
-  const [loading, setLoading] = useState(true);
-
+function Home() {
+  const { post } = useAPI();
+  console.log(post);
   return (
-    <main>
-      <div>
-        <h1>Home Page</h1>
-      </div>
-
-      {/* logical operator here*/}
-      <div>
-        {
-          loading ? "loading..." : "data show" // Trenary operator
-        }
-
-        {
-          text || "hello" //or operator
-        }
-        <p>
-          Value:
-          {
-            text && "follish" //and operator
-          }
-          'not found'
-        </p>
-        {
-          !text && "loading..." // logical 'not-and' operator
-        }
-      </div>
-    </main>
+    <>
+      {post.map((u) => {
+        return <li key={u.id}>{u.name}</li>;
+      })}
+    </>
   );
-};
+}
 
 export default Home;

@@ -6,7 +6,7 @@ const DataFatch = () => {
   const [error, setError] = useState("");
   const [post, setPost] = useState({});
 
-  useEffect(() => {
+  const fatchData = () => {
     fetch(url)
       .then((response) => response.json())
 
@@ -14,6 +14,7 @@ const DataFatch = () => {
         setLoading(false);
         setPost(data);
         setError("");
+        console.log(data[0].name);
       })
 
       .catch(() => {
@@ -21,11 +22,17 @@ const DataFatch = () => {
         setPost({});
         setError("opps! data not found");
       });
+  };
+
+  useEffect(() => {
+    fatchData();
   }, []);
 
   return (
     <div>
-      {loading ? "loading..." : post.name}
+      {post.map((p) => {
+        return <p>{p.name}</p>;
+      })}
       {error ? error : null}
     </div>
   );
